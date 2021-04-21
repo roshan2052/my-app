@@ -18,4 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/backend/dashboard',[HomeController::class, 'index'])->name('backend.dashboard.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['web','auth'])->prefix('backend/')->name('backend.')->group(function () {
+    Route::get('dashboard',[HomeController::class, 'index'])->name('dashboard.index');
+});
+
