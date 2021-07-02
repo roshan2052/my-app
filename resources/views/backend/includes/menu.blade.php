@@ -12,20 +12,20 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="javascript: void(0);">
+                    <a href="{{ route('backend.dashboard.index') }}">
                         <i class="fe-airplay"></i>
-                        <span> Dashboards </span>
+                        <span> Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fas fa-user-injured"></i><span>Patient</span><span class="menu-arrow"></span></a>
+                    <a href="javascript: void(0);"><i class="fas fa-user-injured"></i><span>Test</span><span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="a">Create</a>
+                            <a href="{{ route('backend.test.create') }}">Create</a>
                         </li>
                         <li>
-                            <a href="b">List</a>
+                            <a href="{{  route('backend.test.index')  }}">List</a>
                         </li>
                     </ul>
                 </li>

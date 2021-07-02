@@ -1,0 +1,42 @@
+.navbar-custom{
+    background: linear-gradient(213deg, #028046 0%, #5E3791 100%)
+}
+.m-left-20{
+    margin-left: 20px;
+}
+.action_group{
+    display: flex;
+}
+.action_group .mr-right-5{
+    margin-right: 5px;
+}
+.trash-bcolor{
+    background: #d00818;
+}
+.btn-green{
+    background-color: #028046 ;
+    border-color:#028046 ;
+}
+button.btn.btn-primary.waves-effect.waves-light.ea_custom_btn {
+    margin-bottom: 17px;
+}
+a.custom_btn_cl {
+    float: right;
+}
+.btn.custom_btn_cl{
+    padding: 9px 25px;
+}
+hr.custom_hr{
+    margin-top: 32px;
+    border-top: 1px solid #dadada;
+}
+h4.space_create a{
+    margin-right: 10px;
+}
+h4.space_create a:last-child{
+    margin-right: 0px;
+}
+h4.header-title .btn-purple{
+    background-color: #5E3791;
+    border-color: #5E3791;
+}

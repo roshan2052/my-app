@@ -14,6 +14,9 @@
     <link href="{{ asset('backend/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/css/app.min.css') }}" rel="stylesheet" type="text/css" />
 
+     <!-- custom css -->
+    <link href="{{ asset('backend/css/custom-style.css') }}" rel="stylesheet" type="text/css" />
+
     @yield('css')
 
 </head>

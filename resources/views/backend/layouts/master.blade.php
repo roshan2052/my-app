@@ -24,7 +24,7 @@
                                     <div class="page-title-right">
                                         @include('backend.includes.breadcrumb')
                                     </div>
-                                    <h4 class="page-title">Dashboard</h4>
+                                    <h4 class="page-title">{{isset($panel) ? $panel : 'Dashboard'}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -67,8 +67,11 @@
         <!-- Dashboar 1 init js-->
         <script src="{{ asset('backend/js/pages/dashboard-1.init.js') }}"></script>
 
-        <!-- App js-->
+        <!-- App js -->
         <script src="{{ asset('backend/js/app.min.js') }}"></script>
+
+          <!-- Sweetalert -->
+        @include('sweetalert::alert')
 
         @yield('js')
 
