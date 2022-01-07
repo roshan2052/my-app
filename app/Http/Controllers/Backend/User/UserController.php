@@ -9,6 +9,7 @@ use App\Http\Requests\Backend\ProfileRequest;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Hash;
 use App\Services\ConstantMessageService;
+use Auth;
 
 class UserController extends BaseController
 {
@@ -55,10 +56,16 @@ class UserController extends BaseController
 
     public function changePassword(PasswordCheckedRequest $request)
     {
-        $password = $request['new_password'] ? Hash::make($request['new_password']) : auth()->user()->password;
-        auth()->user()->update(['password' => $password]);
-        toast(ConstantMessageService::UPDATE_PASSWORD,'success','top-right');
-        return response()->json('password updated successfully');
+        try{
+            getLoggedInUser()->update(['password' => Hash::make($request['new_password'])]);
+            toast(ConstantMessageService::UPDATE_PASSWORD,'success','top-right');
+            return response()->json(['Password updated successfully',200]);
+        }
+        catch (\Exception $e) {
+            toast('Password update failed!','error','top-right');
+            return response()->json(['Password updated failed!',404]);
+        }
+
     }
 
 }

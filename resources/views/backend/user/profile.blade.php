@@ -9,7 +9,7 @@
             @if (isset($data['row']->image))
                 <img src="{{ getImagePath($folder_name,$data['row']->image) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
             @else
-                <img src="{{ asset('backend/images/users/user.png') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                <img src="{{ asset('backend/assets/images/users/user.png') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
             @endif
 
             <h4 class="mb-0">{{ $data['row'] ? $data['row']->full_name : auth()->user()->name }}</h4>
@@ -29,21 +29,21 @@
 
             <ul class="social-list list-inline mt-3 mb-0">
                 <li class="list-inline-item">
-                    <a target="_blank" href="{{ $data['row']->facebook_url }}" class="social-list-item border-primary text-primary">
+                    <a target="_blank" href="{{ $data['row'] ? $data['row']->facebook_url : '#' }}" class="social-list-item border-primary text-primary">
                         <i class="mdi mdi-facebook"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a target="_blank" href="{{ $data['row']->instagram_url }}" class="social-list-item border-info text-info">
+                    <a target="_blank" href="{{ $data['row'] ? $data['row']->instagram_url : '#' }}" class="social-list-item border-info text-info">
                         <i class="mdi mdi-instagram"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a target="_blank" href="{{ $data['row']->linkedin_url }}" class="social-list-item border-danger text-danger"><i
+                    <a target="_blank" href="{{ $data['row'] ? $data['row']->linkedin_url : '#' }}" class="social-list-item border-danger text-danger"><i
                         class="mdi mdi-linkedin"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <a target="_blank" href="{{ $data['row']->github_url }}" class="social-list-item border-secondary text-secondary">
+                    <a target="_blank" href="{{ $data['row'] ? $data['row']->github_url : '#' }}" class="social-list-item border-secondary text-secondary">
                         <i class="mdi mdi-github-circle"></i>
                     </a>
                 </li>

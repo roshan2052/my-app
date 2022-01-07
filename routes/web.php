@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Backend\HomeController;
-use App\Http\Controllers\Backend\TestController;
 use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\TestController;
+use App\Http\Controllers\Backend\TestingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,12 @@ Route::middleware(['web','auth'])->prefix('backend/')->name('backend.')->group(f
 
     // test crud
     Route::resource('test', TestController::class)->names('test');
+
+    // testing
+    Route::resource('testing', TestingController::class)->names('testing');
+    Route::post('testing/data', [TestingController::class, 'getTestingDataForDataTable'])->name('testing.data');
+
+
 });
 
 Route::group(['prefix' => 'backend/user', 'as' => 'backend.user.', 'namespace' => 'Backend\User\\', 'middleware' => 'auth'], function () {

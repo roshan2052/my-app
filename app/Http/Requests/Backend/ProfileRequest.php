@@ -26,6 +26,7 @@ class ProfileRequest extends FormRequest
         return [
             'full_name'     => 'required',
             'mobile'        => 'required',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ];
     }
@@ -33,8 +34,8 @@ class ProfileRequest extends FormRequest
     public function  messages()
     {
         return [
-          'full_name.required'  => 'Please enter your name',
-          'mobile.required'     => 'Please enter your mobile number',
+          'full_name.required'  => 'Please enter your name.',
+          'mobile.required'     => 'Please enter your mobile number.',
         ];
     }
 }

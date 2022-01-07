@@ -1,5 +1,4 @@
-$('.delete-confirm').click(function(event) {
-    event.preventDefault();
+$(document).on("click",".delete-confirm",function() {
     var form =  $(this).closest("form");
     Swal.fire({
     title: 'Are you sure?',
@@ -15,3 +14,4 @@ $('.delete-confirm').click(function(event) {
         }
     })
 });
+

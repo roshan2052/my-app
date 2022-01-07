@@ -46,6 +46,8 @@
                     </a>
                 @endif
             </div>
+            @include('error.single_field_validation_message',['fieldname' => 'profile_image'])
+
         </div>
 
         <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth mr-1"></i> Social</h5>

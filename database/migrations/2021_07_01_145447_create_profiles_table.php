@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->string('full_name');
             $table->string('address');
             $table->string('mobile');
@@ -27,7 +27,6 @@ class CreateProfilesTable extends Migration
             $table->string('linkedin_url')->nullable();
             $table->string('github_url')->nullable();
             $table->text('short_bio')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

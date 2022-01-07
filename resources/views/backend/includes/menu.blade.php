@@ -30,6 +30,18 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);"><i class="fas fa-user-injured"></i><span>Testing</span><span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('backend.testing.create') }}">Create</a>
+                        </li>
+                        <li>
+                            <a href="{{  route('backend.testing.index')  }}">List</a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
 
         </div>

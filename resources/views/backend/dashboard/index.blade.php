@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-        <p>hello</p>
+        <p>Hello {{ auth()->user()->name }}</p>
     </div>
 @endsection
 

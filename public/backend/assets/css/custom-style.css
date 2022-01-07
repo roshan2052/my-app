@@ -40,3 +40,8 @@ h4.header-title .btn-purple{
     background-color: #5E3791;
     border-color: #5E3791;
 }
+.datatable_action{
+    display: inline-block;
+    display: flex;
+    margin-right: 10px;
+}
