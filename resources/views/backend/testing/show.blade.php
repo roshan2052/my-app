@@ -59,5 +59,4 @@
 
 @section('js')
     <script src="{{ asset('backend/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-    <script src="{{ asset('backend/js/general.js') }}"></script>
 @endsection

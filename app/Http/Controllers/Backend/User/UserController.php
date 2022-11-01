@@ -43,7 +43,8 @@ class UserController extends BaseController
                 }
             }
             $record = Profile::updateOrCreate([
-                'user_id' => getLoggedInUser()->id],
+                'user_id' => getLoggedInUser()->id
+            ],
                 $request->all()
             );
             toast('Profile Updated successfully.','success','top-right');

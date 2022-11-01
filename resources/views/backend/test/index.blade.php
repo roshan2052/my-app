@@ -18,7 +18,7 @@
                     <a href="{{route($base_route . 'create')}}" class="btn btn-success custom_btn_cl m-left-20 btn-green"><i class="fas fa-pencil-alt text-light mr-2"></i>Create</a>
                 </h4>
                 <hr class="custom_hr">
-                <table id="dataTable" class="table table-striped dt-responsive nowrap">
+                <table id="dataTable" class="table table-striped dt-responsive nowrap w-100 dataTable">
                     <thead>
                     <tr>
                         <th>S.N.</th>

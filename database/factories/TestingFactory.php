@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Testing;
+use App\Models\Test;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TestingFactory extends Factory
@@ -22,7 +24,7 @@ class TestingFactory extends Factory
     public function definition()
     {
         return [
-            'test_id' => 9,
+            'test_id' => Test::inRandomOrder()->value('id'),
             'title' => $this->faker->name,
             'created_by' => 2,
         ];

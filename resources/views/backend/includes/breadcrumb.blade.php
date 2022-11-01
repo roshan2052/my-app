@@ -4,5 +4,5 @@
         <li class="breadcrumb-item"><a href="{{ route($base_route.'index') }}">{{isset($panel)?$panel:'Dashboard'}}</a></li>
       @endif
     @endif
-    <li class="breadcrumb-item active">{{isset($page_title)?$page_title:'Dashboard'}}</li>
+    <li class="breadcrumb-item active">{{isset($page_title)? $page_title : 'Dashboard'}}</li>
 </ol>

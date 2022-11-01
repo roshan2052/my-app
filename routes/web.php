@@ -37,7 +37,11 @@ Route::middleware(['web','auth'])->prefix('backend/')->name('backend.')->group(f
     Route::get('dashboard',[HomeController::class, 'index'])->name('dashboard.index');
 
     // test crud
+    Route::get('test/export', [TestController::class, 'export'])->name('test.export');
+
     Route::resource('test', TestController::class)->names('test');
+
+
 
     // testing
     Route::resource('testing', TestingController::class)->names('testing');

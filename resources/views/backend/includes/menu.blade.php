@@ -42,6 +42,18 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);"><i class="fas fa-user-injured"></i><span>Exports & Imports</span><span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('backend.test.export') }}">Export Users</a>
+                        </li>
+                        <li>
+                            <a href="">Import Test</a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
 
         </div>

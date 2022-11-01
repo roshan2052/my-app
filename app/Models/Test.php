@@ -1,30 +1,30 @@
 <?php
 
 namespace App\Models;
+use App\Traits\CreatedUpdatedBy;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class Test extends BaseModel
 {
-    use HasFactory;
+    use HasFactory,CreatedUpdatedBy;
 
     protected $fillable = ['title','key','status','created_by','updated_by'];
 
-    public function createdBy()
-    {
-        return $this->belongsTo(User::class,'created_by');
+    public function scopeRegisteredWithinDays($query, $days) {
+        return $query->where('created_at', '>=', now()->subDays($days));
     }
-    public function updatedBy()
-    {
-        return $this->belongsTo(User::class,'updated_by');
+
+    public function testings(){
+        return $this->hasMany(Testing::class);
     }
-    public function setStatusAttribute($value)
-    {
-        $this->attributes['status'] = $value == 'publish'? 1: 0;
+
+    public static function boot(){
+        parent::boot();
+
+        static::deleting(function ($model){
+            $model->testings()->delete();
+        });
     }
-    public function getStatusAttribute($value)
-    {
-        return $value == 1? 'publish' : 'un-publish';
-    }
+
 }

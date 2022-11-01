@@ -2,7 +2,7 @@
 @section('title',$page_title)
 
 @section('css')
-    <link href="{{ asset('backend/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -58,6 +58,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('backend/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-    <script src="{{ asset('backend/js/general.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 @endsection

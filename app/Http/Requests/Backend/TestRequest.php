@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class TestRequest extends FormRequest
 {
@@ -24,9 +25,9 @@ class TestRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required',
-            'key'           => 'required',
-
+            'title'         => ['required','string','max:255', Rule::unique('tests')->ignore($this->id)],
+            'key'           => 'required|string|max:255',
+            'status'        => 'required|string|max:255',
         ];
     }
 

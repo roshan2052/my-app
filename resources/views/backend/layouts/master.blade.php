@@ -70,6 +70,9 @@
         <!-- App js -->
         <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
 
+        <!-- Common js -->
+        <script src="{{ asset('backend/assets/js/general.js') }}"></script>
+
           <!-- Sweetalert -->
         @include('sweetalert::alert')
 
